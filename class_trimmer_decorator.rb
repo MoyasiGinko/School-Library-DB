@@ -1,4 +1,5 @@
 # Purpose: TrimmerDecorator class
+require './class_decorator'
 
 class TrimmerDecorator < Decorator
   def correct_name
