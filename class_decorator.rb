@@ -1,4 +1,5 @@
 # Purpose: Abstract class for decorators
+require './class_nameable'
 
 class Decorator < Nameable
   def initialize(nameable)
