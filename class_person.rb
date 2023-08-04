@@ -1,3 +1,5 @@
+# class_person.rb
+
 class Person
   attr_reader :id
   attr_accessor :name, :age
@@ -23,10 +25,3 @@ class Person
     @age >= 18
   end
 end
-
-# Example usage:
-person = Person.new(13, 'Moyasi_Ginko')
-person.name = 'moyasi'
-puts person.name
-puts person.can_use_services
-
