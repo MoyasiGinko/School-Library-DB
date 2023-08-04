@@ -3,6 +3,10 @@
 require './class_person'
 require './class_student'
 require './class_teacher'
+require './class_nameable'
+require './class_decorator'
+require './class_capitalize_decorator'
+require './class_trimmer_decorator'
 
 # Example usage for Person class:
 person = Person.new(13, 'Moyasi_Ginko')
@@ -27,3 +31,13 @@ puts "Name: #{teacher.name}"
 puts "Age: #{teacher.age}"
 puts "Specialization: #{teacher.specialization}"
 puts "Can use services? #{teacher.can_use_services}"
+
+# example usage for Decorator class
+person2 = Person.new(22, 'maximilianus')
+puts person2.correct_name
+
+capitalized_person = CapitalizeDecorator.new(person2)
+puts capitalized_person.correct_name
+
+capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
+puts capitalized_trimmed_person.correct_name
