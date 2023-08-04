@@ -4,9 +4,9 @@ require './class_person'
 require './class_student'
 require './class_teacher'
 require './class_nameable'
-require './class_decorator'
-require './class_capitalize_decorator'
-require './class_trimmer_decorator'
+require './class_decorator/class_decorator'
+require './class_decorator/class_capitalize_decorator'
+require './class_decorator/class_trimmer_decorator'
 
 # Example usage for Person class:
 person = Person.new(13, 'Moyasi_Ginko')
