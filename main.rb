@@ -47,8 +47,8 @@ puts capitalized_trimmed_person.correct_name
 
 # Example usage for association between classes
 neuro_science = Classroom.new('NeuroScience')
-student1 = Student.new(12, neuro_science, 'John Doe')
-student2 = Student.new(12, neuro_science, 'Jane Smith')
+Student.new(12, neuro_science, 'John Doe')
+Student.new(12, neuro_science, 'Jane Smith')
 
 person_john = Person.new(23, 'John Doe')
 person_jane = Person.new(18, 'Jane Smith')
@@ -81,7 +81,7 @@ books_list.each { |book| puts "#{book.title}, #{book.author}" }
 puts "\n=== List of Students ==="
 puts 'Name, Age, Classroom'
 puts '--------------------------'
-students_list.each { |student| puts "#{student.name}, #{student.age}, #{student.classroom}" }
+students_list.each { |st| puts "#{st.name}, #{st.age}, #{st.classroom}" }
 
 # List of rentals
 puts "\n=== List of Rentals ==="

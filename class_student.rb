@@ -5,16 +5,20 @@ require './class_person' # Import the Person class from the class_person file
 class Student < Person
   attr_reader :classroom
 
-  @@all_students = []
+  @all_students = []
 
   def initialize(age, classroom, name = 'Unknown', parent_permission: false)
     super(age, name, parent_permission: parent_permission)
     @classroom = classroom
-    @@all_students << self
+    self.class.add_student(self)
   end
 
   def self.all
-    @@all_students
+    @all_students
+  end
+
+  def self.add_student(student)
+    @all_students << student
   end
 
   def classroom=(classroom)
