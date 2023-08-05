@@ -47,7 +47,7 @@ capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
 puts capitalized_trimmed_person.correct_name
 
 
-# example usage for association
+# example usage for association between classes
 neuro_science = Classroom.new('NeuroScience')
 neuro_science.add_student(12, 'John Doe')
 neuro_science.add_student(12, 'Jane Smith')
