@@ -11,7 +11,6 @@ require './class_classroom'
 require './class_book'
 require './class_rental'
 
-
 # Example usage for Person class:
 person = Person.new(13, 'Moyasi_Ginko')
 person.name = 'moyasi'
@@ -45,7 +44,6 @@ puts capitalized_person.correct_name
 
 capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
 puts capitalized_trimmed_person.correct_name
-
 
 # Example usage for association between classes
 neuro_science = Classroom.new('NeuroScience')
