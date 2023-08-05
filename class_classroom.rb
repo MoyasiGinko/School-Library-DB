@@ -1,3 +1,5 @@
+# class_classroom.rb
+
 class Classroom
   attr_accessor :label, :students
 
@@ -6,10 +8,13 @@ class Classroom
     @students = []
   end
 
-  # Method to add a student to the classroom
-  def add_student(age, name)
-    student = Student.new(age, self, name)
+  def add_student(student)
     @students << student
-    student
+    student.classroom = self
+  end
+
+  # Override the to_s method to show the classroom name
+  def to_s
+    @label
   end
 end

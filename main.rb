@@ -47,25 +47,44 @@ puts capitalized_trimmed_person.correct_name
 
 # Example usage for association between classes
 neuro_science = Classroom.new('NeuroScience')
-neuro_science.add_student(12, 'John Doe')
-neuro_science.add_student(12, 'Jane Smith')
-
-neuro_science.students.map { |s| puts s.name }
+student1 = Student.new(12, neuro_science, 'John Doe')
+student2 = Student.new(12, neuro_science, 'Jane Smith')
 
 person_john = Person.new(23, 'John Doe')
 person_jane = Person.new(18, 'Jane Smith')
 
+# Create some books
 book_love = Book.new('Loving Intro', 'Author1')
 book_build = Book.new("Let's build the world", 'Author1')
 book_move = Book.new("Let's go to mars", 'Author2')
 book_hate = Book.new('The end of hating story', 'Author2')
 
+# Create some rentals
 Rental.new('2018-2-13', book_love, person_john)
 Rental.new('2018-2-13', book_love, person_jane)
 Rental.new('2020-3-1', book_build, person_john)
 Rental.new('2022-1-19', book_move, person_jane)
 Rental.new('2022-8-19', book_hate, person_jane)
 
-book_love.rentals.map { |rent| puts rent.person.name }
-person_john.rentals.map { |rent| puts rent.book.title }
-person_jane.rentals.map { |rent| puts rent.book.title }
+# Create arrays to store instances
+books_list = Book.all
+students_list = Student.all
+rentals_list = Rental.all
+
+# List of books
+puts '=== List of Books ==='
+puts 'Title, Author'
+puts '--------------------------'
+books_list.each { |book| puts "#{book.title}, #{book.author}" }
+
+# List of students
+puts "\n=== List of Students ==="
+puts 'Name, Age, Classroom'
+puts '--------------------------'
+students_list.each { |student| puts "#{student.name}, #{student.age}, #{student.classroom}" }
+
+# List of rentals
+puts "\n=== List of Rentals ==="
+puts 'Date, Book Title, Person Name'
+puts '----------------------------------'
+rentals_list.each { |rental| puts "#{rental.date}, #{rental.book.title}, #{rental.person.name}" }

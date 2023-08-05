@@ -1,14 +1,17 @@
 class Rental
   attr_accessor :date, :book, :person
 
+  @@all_rentals = []
+
   def initialize(date, book, person)
     @date = date
     @book = book
     @person = person
-
-    # Add the rental to the book's rentals
-    book.add_rental(self)
-    # Add the rental to the person's rentals
-    person.add_rental(self)
+    @@all_rentals << self
   end
+
+  def self.all
+    @@all_rentals
+  end
+
 end
