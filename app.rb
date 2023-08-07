@@ -85,6 +85,23 @@ class App
     end
   end
 
+  def create_sample_data(app)
+    # Create some classrooms
+    app.create_classroom('NeuroScience')
+    app.create_classroom('Math 101')
+
+    # Create some books
+    app.create_book('Loving Intro', 'Author1')
+    app.create_book("Let's build the world", 'Author1')
+    app.create_book("Let's go to mars", 'Author2')
+    app.create_book('The end of hating story', 'Author2')
+
+    # Create some people
+    app.create_person(23, 'John Doe', 'student', 'NeuroScience')
+    app.create_person(18, 'Jane Smith', 'student', 'Math 101')
+    app.create_person(43, 'Henry', 'teacher', nil, parent_permission: true)
+  end
+
   # Display menu options to the user
   def menu
     puts "\nChoose an option:"
